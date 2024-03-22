@@ -42,6 +42,7 @@ export default function Header() {
 
   const logoStyle = {
     marginLeft: { xs: "10px", sm: "20px", md: "50px", lg: "100px" },
+    width: { xs: "60px", sm: "80px", md: "100px", lg: "120px" },
   };
 
   const navStyle = {
