@@ -14,19 +14,19 @@ interface AppContainerProps {
 
 export default function AppContainer({ children }: AppContainerProps) {
   return (
-    <Box sx={{ display: "flex" }}>
+    <>
       <CssBaseline />
 
       <Header />
 
       <Box
         component="main"
-        sx={{ paddingTop: { xs: "56px", sm: "64px", md: "80px" } }}
+        sx={{ paddingTop: { xs: "56px", sm: "64px", md: "100px" } }}
       >
         {children}
       </Box>
 
       <Footer />
-    </Box>
+    </>
   );
 }

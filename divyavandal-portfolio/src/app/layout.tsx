@@ -1,12 +1,9 @@
 import "./globals.css";
 
 import AppContainer from "@/components/app-container/app-container";
-import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "@/configs/theme";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Divya Vandal",
@@ -20,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
         <ThemeProvider theme={theme}>
           <AppContainer>{children}</AppContainer>
         </ThemeProvider>

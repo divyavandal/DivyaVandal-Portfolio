@@ -34,18 +34,19 @@ export default function Header() {
 
   const appBarStyle = {
     bgcolor: "#123018",
-    minHeight: { xs: "56px", sm: "64px", md: "80px" },
+    minHeight: { xs: "56px", sm: "64px", md: "100px" },
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
   };
 
   const logoStyle = {
-    marginLeft: { xs: "10px", sm: "20px", md: "50px", lg: "70px" },
+    marginLeft: { xs: "10px", sm: "20px", md: "50px", lg: "100px" },
   };
 
   const navStyle = {
-    marginRight: { xs: "10px", sm: "20px", md: "50px", lg: "70px" },
+    marginRight: { xs: "10px", sm: "20px", md: "50px", lg: "100px" },
+    fontSize: "20px",
   };
 
   return (
@@ -54,7 +55,7 @@ export default function Header() {
         <Grid container alignItems="center" justifyContent="space-between">
           <Grid item>
             <Box sx={logoStyle}>
-              <Typography variant="h6">Divya Vandal</Typography>
+              <img src="/images/logo.png" width="108px" />
             </Box>
           </Grid>
 
@@ -65,9 +66,7 @@ export default function Header() {
                   {navItems.map((navItem) => (
                     <Grid item key={navItem.navText}>
                       <Link href={navItem.navRoute} key={navItem.navText}>
-                        <Typography variant="subtitle1" key={navItem.navText}>
-                          {navItem.navText}
-                        </Typography>
+                        <div> {navItem.navText}</div>
                       </Link>
                     </Grid>
                   ))}
