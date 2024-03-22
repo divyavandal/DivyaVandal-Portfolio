@@ -19,8 +19,10 @@ export default function AppContainer({ children }: AppContainerProps) {
 
       <Header />
 
-      <Box component="main" sx={{ p: 3 }}>
-        <Toolbar />
+      <Box
+        component="main"
+        sx={{ paddingTop: { xs: "56px", sm: "64px", md: "80px" } }}
+      >
         {children}
       </Box>
 

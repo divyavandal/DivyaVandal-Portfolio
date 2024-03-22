@@ -4,7 +4,6 @@ import * as React from "react";
 
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import Drawer from "@mui/material/Drawer";
 import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
@@ -15,6 +14,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Typography from "@mui/material/Typography";
+import { rgba } from "polished";
 
 const drawerWidth = 240;
 const navItems = [
@@ -63,8 +63,8 @@ export default function Header() {
               <Box sx={{ display: { xs: "none", md: "block" } }}>
                 <Grid container spacing={4}>
                   {navItems.map((navItem) => (
-                    <Grid item>
-                      <Link href={navItem.navRoute}>
+                    <Grid item key={navItem.navText}>
+                      <Link href={navItem.navRoute} key={navItem.navText}>
                         <Typography variant="subtitle1" key={navItem.navText}>
                           {navItem.navText}
                         </Typography>
@@ -108,8 +108,14 @@ export default function Header() {
           <List>
             {navItems.map((navItem) => (
               <ListItem key={navItem.navText} disablePadding>
-                <ListItemButton sx={{ textAlign: "center" }}>
-                  <ListItemText primary={navItem.navText} />
+                <ListItemButton
+                  sx={{ textAlign: "center" }}
+                  key={navItem.navText}
+                >
+                  <ListItemText
+                    primary={navItem.navText}
+                    key={navItem.navText}
+                  />
                 </ListItemButton>
               </ListItem>
             ))}
